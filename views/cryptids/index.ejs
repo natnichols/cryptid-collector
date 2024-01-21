@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>👁️ Latest Sightings 👁️</h1>
+  <ul>
+    <!-- add randomized emoji function from cats profile later -->
+    <% cryptids.forEach(cryptid => { %>
+      <li>👽 <%= cryptid.name %> spotted by <%= cryptid.owner.name %> on <%= cryptid.dateSpotted %></li>
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>

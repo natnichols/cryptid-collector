@@ -5,7 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 // GET localhost:3000/cryptids
-//! FIRST ROUTE
+router.get('/', cryptidsCtrl.index)
 // GET localhost:3000/cryptids/new
 
 // GET localhost:3000/cryptids/:cryptidId

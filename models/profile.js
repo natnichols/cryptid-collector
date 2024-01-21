@@ -5,6 +5,8 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  // diaries: [diarySchema]
+  // favorites: [array]
 }, {
   timestamps: true
 })
