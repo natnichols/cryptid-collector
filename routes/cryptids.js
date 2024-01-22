@@ -11,7 +11,7 @@ router.get('/new', isLoggedIn, cryptidsCtrl.new)
 // GET localhost:3000/cryptids/:cryptidId
 router.get('/:cryptidId', cryptidsCtrl.show)
 // GET localhost:3000/cryptids/:cryptidId/edit
-
+router.get('/:cryptidId/edit', isLoggedIn, cryptidsCtrl.edit)
 // GET localhost:3000/cryptids/:cryptidId/comments/:commentId/edit
 
 // POST localhost:3000/cryptids
@@ -26,7 +26,8 @@ router.post('/', isLoggedIn, cryptidsCtrl.create)
 
 // PUT localhost:3000/cryptids/:cryptidId/comments/:commentId (update comment)
 
-// PATCH localhost:3000/cryptids/:cryptidId/flip-spotted
+/* 
+// PATCH localhost:3000/cryptids/:cryptidId/flip-spotted*/
 
 
 export {

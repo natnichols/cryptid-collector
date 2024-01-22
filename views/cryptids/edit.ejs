@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit this Cryptid! ✏️👻</h1>
+  <form action="/cryptids/<%= cryptid._id %>?_method=PUT" method="POST">
+    <label>
+      Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= cryptid.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label for="spotted-date-input">Date Spotted:
+      <input type="datetime-local" value="<%= spottedDefaultDate %>" name="spotted" id="spotted-date-input">
+    </label>
+    <label for="description-input">Description:
+      <textarea name="description" id="description-input"><%= cryptid.description %></textarea>
+    </label>
+    <button class="btn" type="submit">Edit Cryptid ✏️👻</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

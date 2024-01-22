@@ -54,9 +54,25 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    const spottedDefaultDate = cryptid.spotted.toISOString().slice(0, 16)
+    res.render('cryptids/edit', {
+      cryptid,
+      title: 'edit 👻',
+      spottedDefaultDate: spottedDefaultDate
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
   create,
   show,
+  edit,
 }
