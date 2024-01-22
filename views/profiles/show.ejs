@@ -10,6 +10,44 @@
     >
   </div>
   <h1>It's a-<%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add New Diary</h2>
+    <form action="/profiles/<%= profile._id %>/diaries" method="POST">
+      <label>
+        Subject: 
+        <input type="text" name="subject" autocomplete="off">
+      </label>
+      <label for="posted-date-input">Date Posted:
+        <input type="datetime-local" value="<%# spottedDate %>" name="posted" id="posted-date-input">
+      </label>
+      <label for="entry-input">Entry:
+        <textarea 
+          name="entry" 
+          id="entry-input" 
+          cols="30"
+          rows="5" 
+          type="text"
+          autocomplete="off"
+        ></textarea>
+      </label>
+      <button type="submit">Add New Diary 👽📓✨</button>
+    </form>
+  <% } %>
+  <% if (profile.diaries.length) { %>
+    <h2>
+      <%= isSelf ? "You have" : `${profile.name} has` %> diaries! Here they are:
+    </h2>
+    <% profile.diaries.forEach(diary => { %>
+      <h3>
+        <%= diary.subject %> written by <%= diary.author %> on [INSERT DATE HERE]
+      </h3>
+      <p><%= diary.entry %></p>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any diaries.
+    </h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

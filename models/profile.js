@@ -13,7 +13,7 @@ const Schema = mongoose.Schema
 const diarySchema = new Schema({
   subject: String,
   author: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  description: String,
+  entry: String,
   posted: {
     type: Date,
     default: Date.now()
