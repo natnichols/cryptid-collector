@@ -1,7 +1,11 @@
 import { Cryptid } from '../models/cryptid.js'
 
 function index(req, res) {
-  Cryptid.find({}).then(cryptids => {
+  Cryptid.find({}).populate([
+    {path: 'owner'},
+    {path: 'owner.owner'}
+  ])
+  .then(cryptids => {
     res.render('cryptids/index', {
       cryptids,
       title: '🦇'
@@ -23,7 +27,19 @@ function newCryptid(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  Cryptid.create(req.body).then(cryptid => {
+    res.redirect('/cryptids')
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newCryptid as new,
+  create,
 }

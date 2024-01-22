@@ -15,7 +15,7 @@ router.get('/new', isLoggedIn, cryptidsCtrl.new)
 // GET localhost:3000/cryptids/:cryptidId/comments/:commentId/edit
 
 // POST localhost:3000/cryptids
-// ! FOLLOWING ROUTE (RETURN TO NOTION)
+router.post('/', isLoggedIn, cryptidsCtrl.create)
 // POST localhost:3000/cryptids/:cryptidId/comments
 
 // DELETE localhost:3000/cryptids/:cryptidId
