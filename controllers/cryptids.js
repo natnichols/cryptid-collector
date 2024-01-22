@@ -13,6 +13,17 @@ function index(req, res) {
   })
 }
 
+function newCryptid(req, res) {
+  const newCryptid = new Cryptid()
+  const dt = newCryptid.spotted
+  const spottedDate = dt.toISOString().slice(0, 16)
+  res.render('cryptids/new', {
+    title: 'Add Cryptid',
+    spottedDate
+  })
+}
+
 export {
   index,
+  newCryptid as new,
 }

@@ -11,7 +11,8 @@ const Schema = mongoose.Schema
 const cryptidSchema = new Schema({
   name: String,
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  dateSpotted: {
+  description: String,
+  spotted: {
     type: Date,
     default: Date.now()
   },
