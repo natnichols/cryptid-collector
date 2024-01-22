@@ -10,6 +10,9 @@
     <a href="/cryptids/<%= cryptid._id %>/edit">
       <button class="btn">Edit Cryptid ✏️👻</button>
     </a>
+    <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete Cryptid ❌👽</button>
+    </form>
   <% } %>
 </section>
 

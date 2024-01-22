@@ -19,8 +19,8 @@ router.post('/', isLoggedIn, cryptidsCtrl.create)
 // POST localhost:3000/cryptids/:cryptidId/comments
 
 // DELETE localhost:3000/cryptids/:cryptidId
-
-// DELETE localhost:3000/cryptids/:cryptidId
+router.delete('/:cryptidId', isLoggedIn, cryptidsCtrl.delete)
+// DELETE localhost:3000/cryptids/:cryptidId (delete comment)
 
 // PUT localhost:3000/cryptids/:cryptidId (update)
 router.put('/:cryptidId', isLoggedIn, cryptidsCtrl.update)

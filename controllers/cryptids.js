@@ -89,6 +89,26 @@ function update(req, res) {
   })
 }
 
+function deleteCryptid(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    if (cryptid.owner.equals(req.user.profile._id)) {
+      cryptid.deleteOne().then(()=> {
+        res.redirect('/cryptids')
+      })
+      .catch(err => {
+        console.log(`🚨💥🖍️`, err)
+        res.redirect('/cryptids')
+      })
+    } else {
+      throw new Error ('🚫👻 Not authorized 😡🛑')
+    }
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
@@ -96,4 +116,5 @@ export {
   show,
   edit,
   update,
+  deleteCryptid as delete,
 }
