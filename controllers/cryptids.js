@@ -69,10 +69,31 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    if (cryptid.owner.equals(req.user.profile._id)) {
+      cryptid.updateOne(req.body).then(()=> {
+        res.redirect(`/cryptids/${cryptid._id}`)
+      })
+      .catch(err => {
+        console.log(`🚨💥🖍️`, err)
+        res.redirect('/cryptids')
+      })
+    } else {
+      throw new Error ('🚫👻 Not authorized 😡🛑')
+    }
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
   create,
   show,
   edit,
+  update,
 }
