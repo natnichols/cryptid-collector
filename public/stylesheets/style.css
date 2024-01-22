@@ -55,6 +55,7 @@ h3 {
 
 ul {
   list-style-type: none;
+  text-align: center;
 }
 
 p, label, li, button, input {
@@ -104,4 +105,8 @@ nav > a {
 
 .inline {
   display: inline;
+}
+
+.profile-photo {
+  width: 20px;
 }

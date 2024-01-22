@@ -9,7 +9,7 @@ router.get('/', cryptidsCtrl.index)
 // GET localhost:3000/cryptids/new
 router.get('/new', isLoggedIn, cryptidsCtrl.new)
 // GET localhost:3000/cryptids/:cryptidId
-
+router.get('/:cryptidId', cryptidsCtrl.show)
 // GET localhost:3000/cryptids/:cryptidId/edit
 
 // GET localhost:3000/cryptids/:cryptidId/comments/:commentId/edit

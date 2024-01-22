@@ -34,7 +34,23 @@ function create(req, res) {
   })
   .catch(err => {
     console.log(`🚨💥🖍️`, err)
-    res.redirect('/')
+    res.redirect('/cryptids')
+  })
+}
+
+function show(req, res) {
+  Cryptid.findById(req.params.cryptidId).populate([
+    {path: 'owner'},
+    {path: 'owner.owner'}
+  ]).then(cryptid => {
+    res.render('cryptids/show', {
+      cryptid,
+      title: '👻 Show'
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
   })
 }
 
@@ -42,4 +58,5 @@ export {
   index,
   newCryptid as new,
   create,
+  show,
 }
