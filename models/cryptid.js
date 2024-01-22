@@ -2,11 +2,13 @@ import { mongoose } from 'mongoose'
 
 const Schema = mongoose.Schema
 
-// const commentSchema = new Schema({
-//   content: String,
-//   spotted: Boolean,
-//   author: {type: Schema.Types.ObjectId, ref: 'Profile'}
-// })
+const commentSchema = new Schema({
+  content: String,
+  spotted: Boolean,
+  author: {type: Schema.Types.ObjectId, ref: 'Profile'}
+}, {
+  timestamps: true
+})
 
 const cryptidSchema = new Schema({
   name: String,
@@ -16,7 +18,7 @@ const cryptidSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  // comments: [commentSchema]
+  comments: [commentSchema]
 }, {
   timestamps: true
 })

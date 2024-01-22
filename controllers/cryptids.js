@@ -41,7 +41,8 @@ function create(req, res) {
 function show(req, res) {
   Cryptid.findById(req.params.cryptidId).populate([
     {path: 'owner'},
-    {path: 'owner.owner'}
+    {path: 'owner.owner'},
+    {path: 'comments.author'}
   ]).then(cryptid => {
     res.render('cryptids/show', {
       cryptid,
@@ -109,6 +110,24 @@ function deleteCryptid(req, res) {
   })
 }
 
+function addComment(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    req.body.author = req.user.profile._id
+    cryptid.comments.push(req.body)
+    cryptid.save().then(()=> {
+      res.redirect(`/cryptids/${cryptid._id}`)
+    })
+    .catch(err => {
+      console.log(`🚨💥🖍️`, err)
+      res.redirect('/cryptids')
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
@@ -117,4 +136,5 @@ export {
   edit,
   update,
   deleteCryptid as delete,
+  addComment,
 }
