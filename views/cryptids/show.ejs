@@ -20,6 +20,11 @@
       <li>
         <%= comment.content %> -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">
           <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
+          <% if (comment.author.equals(user?.profile._id)) { %>
+            <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
+              <button class="btn">✏️</button>
+            </a>
+          <% } %>
       </li>
     <% }) %>
   </ul>

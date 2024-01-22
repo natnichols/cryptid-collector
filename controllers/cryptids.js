@@ -128,6 +128,25 @@ function addComment(req, res) {
   })
 }
 
+function editComment(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    const comment = cryptid.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      res.render('cryptids/editComment', {
+        cryptid,
+        comment,
+        title: 'Update Comment 📝'
+      })
+    } else {
+      throw new Error ('🚫👻 Not authorized 😡🛑')
+    }
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
@@ -137,4 +156,5 @@ export {
   update,
   deleteCryptid as delete,
   addComment,
+  editComment,
 }

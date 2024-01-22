@@ -13,7 +13,7 @@ router.get('/:cryptidId', cryptidsCtrl.show)
 // GET localhost:3000/cryptids/:cryptidId/edit
 router.get('/:cryptidId/edit', isLoggedIn, cryptidsCtrl.edit)
 // GET localhost:3000/cryptids/:cryptidId/comments/:commentId/edit
-
+router.get('/:cryptidId/comments/:commentId/edit', isLoggedIn, cryptidsCtrl.editComment)
 // POST localhost:3000/cryptids
 router.post('/', isLoggedIn, cryptidsCtrl.create)
 // POST localhost:3000/cryptids/:cryptidId/comments
