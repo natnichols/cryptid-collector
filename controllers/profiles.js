@@ -45,8 +45,26 @@ function createDiary(req, res) {
   })
 }
 
+function deleteDiary(req, res) {
+  Profile.findById(req.user.profile._id).then(profile => {
+    profile.diaries.remove({_id: req.params.diaryId})
+    profile.save().then(()=> {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(`🚨💥🖍️`, err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
 export {
   index,
   show,
   createDiary,
+  deleteDiary,
 }

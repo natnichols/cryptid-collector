@@ -42,6 +42,11 @@
         <%= diary.subject %> written by <%= diary.author %> on [INSERT DATE HERE]
       </h3>
       <p><%= diary.entry %></p>
+      <% if (isSelf) { %>
+        <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
+          <button type="submit">❌👽📓 Delete <%= diary.subject %></button>
+        </form>
+      <% } %>
     <% }) %>
   <% } else { %>
     <h2>
