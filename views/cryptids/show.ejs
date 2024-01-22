@@ -24,6 +24,9 @@
             <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
               <button class="btn">✏️</button>
             </a>
+            <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button class="btn" type="submit">❌</button>
+            </form>
           <% } %>
       </li>
     <% }) %>

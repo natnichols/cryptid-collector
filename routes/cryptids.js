@@ -20,8 +20,8 @@ router.post('/', isLoggedIn, cryptidsCtrl.create)
 router.post('/:cryptidId/comments', isLoggedIn, cryptidsCtrl.addComment)
 // DELETE localhost:3000/cryptids/:cryptidId
 router.delete('/:cryptidId', isLoggedIn, cryptidsCtrl.delete)
-// DELETE localhost:3000/cryptids/:cryptidId (delete comment)
-
+// DELETE localhost:3000/cryptids/:cryptidId/comments/:commentId (delete comment)
+router.delete('/:cryptidId/comments/:commentId', isLoggedIn, cryptidsCtrl.deleteComment)
 // PUT localhost:3000/cryptids/:cryptidId (update)
 router.put('/:cryptidId', isLoggedIn, cryptidsCtrl.update)
 // PUT localhost:3000/cryptids/:cryptidId/comments/:commentId (update comment)
