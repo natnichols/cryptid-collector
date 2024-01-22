@@ -147,6 +147,28 @@ function editComment(req, res) {
   })
 }
 
+function updateComment(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    const comment = cryptid.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      cryptid.save().then(() => {
+        res.redirect(`/cryptids/${cryptid._id}`)
+      })
+      .catch(err => {
+        console.log(`🚨💥🖍️`, err)
+        res.redirect('/cryptids')
+      })
+    } else {
+      throw new Error ('🚫👻 Not authorized 😡🛑')
+    }
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
@@ -157,4 +179,5 @@ export {
   deleteCryptid as delete,
   addComment,
   editComment,
+  updateComment,
 }
