@@ -8,6 +8,10 @@ const router = Router()
 router.get('/', isLoggedIn, profilesCtrl.index)
 // GET localhost:3000/profiles/:profileId
 router.get('/:profileId', isLoggedIn, profilesCtrl.show)
+// GET localhost:3000/profiles/:profileId/diaries/newDiary
+router.get('/:profileId/diaries/newDiary', isLoggedIn, profilesCtrl.newDiary)
+// GET localhost:3000/profiles/:profileId/diaries/:diaryId/edit
+router.get('/:profileId/diaries/:diaryId/edit', isLoggedIn, profilesCtrl.editDiary)
 // POST localhost:3000/profiles/:profileId/diaries
 router.post('/:profileId/diaries', isLoggedIn, profilesCtrl.createDiary)
 // DELETE localhost:3000/profiles/diaries/:diaryId

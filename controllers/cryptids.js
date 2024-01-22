@@ -1,10 +1,7 @@
 import { Cryptid } from '../models/cryptid.js'
 
 function index(req, res) {
-  Cryptid.find({}).populate([
-    {path: 'owner'},
-    {path: 'owner.owner'}
-  ])
+  Cryptid.find({}).populate('owner')
   .then(cryptids => {
     res.render('cryptids/index', {
       cryptids,

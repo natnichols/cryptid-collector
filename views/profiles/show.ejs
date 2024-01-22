@@ -11,8 +11,9 @@
   </div>
   <h1>It's a-<%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf)  {%> 
-    <h2>Add New Diary</h2>
-    <form action="/profiles/<%= profile._id %>/diaries" method="POST">
+    <!-- FORM v v -->
+    <!-- <h2>Add New Diary</h2>
+    <form action="/profiles/<%# profile._id %>/diaries" method="POST">
       <label>
         Subject: 
         <input type="text" name="subject" autocomplete="off">
@@ -30,8 +31,12 @@
           autocomplete="off"
         ></textarea>
       </label>
+      <button class="btn" type="submit">Add New Diary 👽📓✨</button>
+    </form> -->
+    <!-- FORM ^^ -->
+    <a href="/profiles/<%= user.profile._id %>/diaries/newDiary">
       <button type="submit">Add New Diary 👽📓✨</button>
-    </form>
+    </a>
   <% } %>
   <% if (profile.diaries.length) { %>
     <h2>
@@ -39,12 +44,15 @@
     </h2>
     <% profile.diaries.forEach(diary => { %>
       <h3>
-        <%= diary.subject %> written by <%= diary.author %> on [INSERT DATE HERE]
+        <%= diary.subject %> written by <%= diary.author.name %> on [INSERT DATE HERE]
       </h3>
       <p><%= diary.entry %></p>
       <% if (isSelf) { %>
+        <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
+          <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
+        </a>
         <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
-          <button type="submit">❌👽📓 Delete <%= diary.subject %></button>
+          <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
         </form>
       <% } %>
     <% }) %>

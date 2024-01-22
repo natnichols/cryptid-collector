@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h2>Edit Diary</h2>
+  <form action="/profiles/<%= user.profile._id %>/diaries/<%= diary._id %>?_method=PUT" method="POST">
+    <label>
+      Subject: 
+      <input value="<%= diary.subject %>" type="text" name="subject" autocomplete="off">
+    </label>
+    <label for="posted-date-input">Date Posted:
+      <input type="datetime-local" value="<%# spottedDate %>" name="posted" id="posted-date-input">
+    </label>
+    <label for="entry-input">Entry:
+      <textarea 
+        name="entry" 
+        id="entry-input" 
+        cols="30"
+        rows="5" 
+        type="text"
+        autocomplete="off"
+      ><%= diary.entry %></textarea>
+    </label>
+    <button type="submit">Update Diary 👽📓✨</button>
+    <!-- <a href="/profiles/<%# profile._id %>/diaries/">
+    </a> -->
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

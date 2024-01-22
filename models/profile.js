@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import { mongoose } from 'mongoose'
 
 const Schema = mongoose.Schema
 
@@ -26,7 +26,7 @@ const diarySchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  diaries: [diarySchema]
+  diaries: [diarySchema],
   // favorites: [array]
 }, {
   timestamps: true
