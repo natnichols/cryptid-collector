@@ -11,23 +11,20 @@ html {
   box-sizing: inherit;
 }
 
-head {
-  
-}
-
 body {
   /* background-color: #1a1a1a; */
   background-image: url('/images/header-trees.jpg');
   background-size: auto;
   background-position: center;
-  color: #f6f6f6;
+  /* color: #f6f6f6; */
+  color: #B6CEC3;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Barlow', sans-serif;
   margin: 0;
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #f6f6f61b;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -81,7 +78,7 @@ section {
 }
 
 a {
-  color: #00B7FF;
+  color: #139f81;
 }
 
 pre {
