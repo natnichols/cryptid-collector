@@ -19,6 +19,7 @@ function newCryptid(req, res) {
   const newCryptid = new Cryptid()
   const dt = newCryptid.spotted
   const spottedDate = dt.toISOString().slice(0, 16)
+  console.log(spottedDate)
   res.render('cryptids/new', {
     title: 'Add Cryptid',
     spottedDate

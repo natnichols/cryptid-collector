@@ -82,11 +82,13 @@ function newDiary(req, res) {
 function editDiary(req, res) {
   Profile.findById(req.params.profileId).then(profile => {
     const diary = profile.diaries.id(req.params.diaryId)
+    const postDefaultDate = diary.posted.toISOString().slice(0, 16)
     if (diary.author.equals(req.user.profile._id)) {
       res.render('profiles/editDiary', {
         profile,
         diary,
-        title: 'Edit Diary 📝👽📓'
+        title: 'Edit Diary 📝👽📓',
+        postDefaultDate
       })
     } else {
       throw new Error ('🚫👻 Not authorized 😡🛑')
