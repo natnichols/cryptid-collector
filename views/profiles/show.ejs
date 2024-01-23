@@ -44,7 +44,7 @@
     </h2>
     <% profile.diaries.forEach(diary => { %>
       <h3>
-        <%= diary.subject %> written by <%= diary.author.name %> on [INSERT DATE HERE]
+        <%= diary.subject %> written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
       </h3>
       <p><%= diary.entry %></p>
       <% if (isSelf) { %>
