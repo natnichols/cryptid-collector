@@ -18,6 +18,8 @@ router.get('/:cryptidId/comments/:commentId/edit', isLoggedIn, cryptidsCtrl.edit
 router.post('/', isLoggedIn, cryptidsCtrl.create)
 // POST localhost:3000/cryptids/:cryptidId/comments
 router.post('/:cryptidId/comments', isLoggedIn, cryptidsCtrl.addComment)
+//! POST localhost:3000/cryptids/:cryptidId/favorites
+router.get('/:cryptidId/favorites', isLoggedIn, cryptidsCtrl.addFavorite)
 // DELETE localhost:3000/cryptids/:cryptidId
 router.delete('/:cryptidId', isLoggedIn, cryptidsCtrl.delete)
 // DELETE localhost:3000/cryptids/:cryptidId/comments/:commentId (delete comment)

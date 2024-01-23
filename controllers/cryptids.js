@@ -1,4 +1,5 @@
 import { Cryptid } from '../models/cryptid.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Cryptid.find({}).populate('owner')
@@ -188,6 +189,30 @@ function deleteComment(req, res) {
   })
 }
 
+function addFavorite(req, res) {
+  Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    // req.body.author = req.user.profile._id
+    Profile.findById(req.user.profile._id).then(profile => {
+      profile.favorites.push(req.params.cryptidId)
+      profile.save().then(()=> {
+        res.redirect(`/cryptids/${cryptid._id}`)
+      })
+      .catch(err => {
+        console.log(`🚨💥🖍️`, err)
+        res.redirect('/cryptids')
+      })
+    })
+    .catch(err => {
+      console.log(`🚨💥🖍️`, err)
+      res.redirect('/cryptids')
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/cryptids')
+  })
+}
+
 export {
   index,
   newCryptid as new,
@@ -200,4 +225,5 @@ export {
   editComment,
   updateComment,
   deleteComment,
+  addFavorite,
 }

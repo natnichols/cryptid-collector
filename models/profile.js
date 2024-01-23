@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { Cryptid } from './cryptid.js'
 
 const Schema = mongoose.Schema
 
@@ -27,7 +28,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   diaries: [diarySchema],
-  // favorites: [array]
+  favorites: [{type: Schema.Types.ObjectId, ref: 'Cryptid'}],
 }, {
   timestamps: true
 })
