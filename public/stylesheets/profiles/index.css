@@ -19,15 +19,16 @@
 .card {
   display: flex;
   width: 300px;
-  background-color: white;
-  border: 2px solid black;
+  background-color: black;
+  border: 2px solid #B6CEC3;
   border-radius: 10px;
-  color: #0d765f;
+  color: #B6CEC3;
   padding: 10px;
 }
 
 .card > img {
   border-radius: 10px;
+  border: 1px solid #B6CEC3;
   height: 96px;
 }
 
