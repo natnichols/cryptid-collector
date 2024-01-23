@@ -96,8 +96,17 @@ nav > a {
 
 .btn {
   margin: 16px 0;
+  border: 1px solid #B6CEC3;
   border-radius: 8px;
   padding: 5px;
+  background-color: black;
+  color: #B6CEC3;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: #B6CEC3;
+  color: black;
 }
 
 .link {
