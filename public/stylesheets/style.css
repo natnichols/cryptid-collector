@@ -11,8 +11,15 @@ html {
   box-sizing: inherit;
 }
 
+head {
+  
+}
+
 body {
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
+  background-image: url('/images/header-trees.jpg');
+  background-size: auto;
+  background-position: center;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
