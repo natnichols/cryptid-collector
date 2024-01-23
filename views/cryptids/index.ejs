@@ -7,8 +7,8 @@
     <!-- add randomized emoji function from cats profile later -->
     <% cryptids.forEach(cryptid => { %>
       <li>👽 
-        <a href="/cryptids/<%= cryptid._id %>"><%= cryptid.name %></a> spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of poster">
-        <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %></li>
+        <a href="/cryptids/<%= cryptid._id %>"><%= cryptid.name %></a>&nbsp; spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of poster">
+        <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a>&nbsp; on <%= cryptid.spotted.toLocaleString() %></li>
     <% }) %>
   </ul>
 </section>
