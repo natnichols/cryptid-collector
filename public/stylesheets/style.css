@@ -22,8 +22,7 @@ body {
   background-position: center;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: 'Barlow', sans-serif;
   margin: 0;
 }
 
