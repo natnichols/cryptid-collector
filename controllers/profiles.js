@@ -94,6 +94,34 @@ function editDiary(req, res) {
   })
 }
 
+function updateDiary(req, res) {
+  //find profile using :profileId
+  Profile.findById(req.params.profileId).then(profile => {
+    //find diary using :diaryId defined on route
+    const diary = profile.diaries.id(req.params.diaryId)
+    //confirm editor is author
+    if (diary.author.equals(req.user.profile._id)) {
+      // set new diary content using diary.set(req.body)
+      diary.set(req.body)
+      // save parent profile doc
+      profile.save().then(()=> {
+        // redirect to show profile
+        res.redirect(`/profiles/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(`🚨💥🖍️`, err)
+        res.redirect(`/profiles`)
+      })
+    } else {
+      throw new Error ('🚫👻 Not authorized 😡🛑')
+    }
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect(`/profiles`)
+  })
+}
+
 export {
   index,
   show,
@@ -101,4 +129,5 @@ export {
   deleteDiary,
   newDiary,
   editDiary,
+  updateDiary,
 }
