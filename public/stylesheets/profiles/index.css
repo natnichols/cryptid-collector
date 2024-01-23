@@ -19,7 +19,7 @@
 .card {
   display: flex;
   width: 300px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.486);
   border: 2px solid #B6CEC3;
   border-radius: 10px;
   color: #B6CEC3;

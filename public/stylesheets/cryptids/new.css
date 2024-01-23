@@ -1,4 +1,4 @@
-form {
+/* form {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 352px));
@@ -9,7 +9,7 @@ form * {
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
-}
+} */
 
 form > button {
   grid-column: span 2;
@@ -23,6 +23,6 @@ form > button:hover {
   cursor: pointer;
 }
 
-#description-input > textarea {
+/* #description-input > textarea {
   width: 250px;
-}
+} */
