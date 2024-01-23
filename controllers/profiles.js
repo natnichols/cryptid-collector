@@ -17,9 +17,11 @@ function show(req, res) {
   Profile.findById(req.params.profileId)
   .populate(
     // {path: 'diaries'},
-    {path: 'diaries.author'},
+    [{path: 'diaries.author'},
+    {path: 'favorites'},]
   )
   .then(profile => {
+    console.log(profile)
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
       title: `👽 ${profile.name}'s profile`,

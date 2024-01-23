@@ -196,7 +196,7 @@ function addFavorite(req, res) {
     Profile.findById(req.user.profile._id).then(profile => {
       profile.favorites.push(req.params.cryptidId)
       profile.save().then(()=> {
-        res.redirect(`/cryptids/${cryptid._id}`)
+        res.redirect('/cryptids')
       })
       .catch(err => {
         console.log(`🚨💥🖍️`, err)

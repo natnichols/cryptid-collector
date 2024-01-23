@@ -10,6 +10,12 @@
     >
   </div>
   <h1>It's a-<%= isSelf ? "you" : profile.name %>!</h1>
+  <div>Favorite Cryptids:</div>
+    <ul>
+      <% profile.favorites.forEach(favorite => { %>
+      <li><%= favorite.name %></li>
+      <% }) %>
+    </ul>
   <% if (isSelf)  {%> 
     <!-- FORM v v -->
     <!-- <h2>Add New Diary</h2>
