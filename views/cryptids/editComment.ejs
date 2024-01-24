@@ -1,24 +1,27 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/cryptids/editComment.css">
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit your comment 📝🦇</h1>
-  <form 
-    action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=PUT"
-    method="POST"
-  >
-    <label>
-      Content: 
-      <textarea
-        cols="30"
-        rows="5" 
-        type="text"
-        name="content" 
-        autocomplete="off"
-      ><%= comment.content %></textarea>
-    </label>
-    <button class="btn" type="submit">Update Comment</button>
-  </form>
+  <div class="edit-comment-container">
+    <h2>Edit your comment 📝🦇</h2>
+    <form 
+      action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=PUT"
+      method="POST"
+    >
+      <label>
+        Content: 
+        <textarea
+          cols="30"
+          rows="5" 
+          type="text"
+          name="content" 
+          autocomplete="off"
+        ><%= comment.content %></textarea>
+      </label>
+      <button class="btn" type="submit">Update Comment</button>
+    </form>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>
