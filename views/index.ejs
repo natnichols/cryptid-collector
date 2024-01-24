@@ -5,12 +5,14 @@
   <div class="root-route-view-container">
     <h2>👽 hello, <%= user ? user.profile.name : "cryptid enthusiast" %></h2>
     <% if (user?.profile.avatar) { %>
-      <div>
-        <img
-          src="<%= user.profile.avatar %>"
-          alt="<%= user.profile.name %> avatar"
-        />
-      </div>
+      <a class="text-decoration-none" href="/profiles/<%= user.profile._id %>">
+        <div>
+          <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+          />
+        </div>
+      </a>
     <% } %>
   </div>
 </main>
