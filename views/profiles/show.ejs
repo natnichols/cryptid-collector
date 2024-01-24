@@ -1,74 +1,56 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <div>
+  <div class="profile-name-container">
     <img 
       class="profile-avatar"
       src="<%= profile.avatar %>" 
       alt="<%= profile.name %>'s avatar"
     >
+    <h1><%= isSelf ? "Your " : `${profile.name}'s` %> Profile</h1>
   </div>
-  <h1>It's a-<%= isSelf ? "you" : profile.name %>!</h1>
-  <div>Favorite Cryptids:</div>
+  <div class="fave-cryptid-container">
+    Favorite Cryptids:
     <ul>
       <% profile.favorites.forEach(favorite => { %>
-      <li>
-        <a href="/cryptids/<%= favorite._id %>"><%= favorite.name %></a>
-      </li>
+        <li>
+          <a href="/cryptids/<%= favorite._id %>"><%= favorite.name %></a>
+        </li>
       <% }) %>
     </ul>
-  <% if (isSelf)  {%> 
-    <!-- FORM v v -->
-    <!-- <h2>Add New Diary</h2>
-    <form action="/profiles/<%# profile._id %>/diaries" method="POST">
-      <label>
-        Subject: 
-        <input type="text" name="subject" autocomplete="off">
-      </label>
-      <label for="posted-date-input">Date Posted:
-        <input type="datetime-local" value="<%# spottedDate %>" name="posted" id="posted-date-input">
-      </label>
-      <label for="entry-input">Entry:
-        <textarea 
-          name="entry" 
-          id="entry-input" 
-          cols="30"
-          rows="5" 
-          type="text"
-          autocomplete="off"
-        ></textarea>
-      </label>
-      <button class="btn" type="submit">Add New Diary 👽📓✨</button>
-    </form> -->
-    <!-- FORM ^^ -->
-    <a href="/profiles/<%= user.profile._id %>/diaries/newDiary">
-      <button class="btn" type="submit">Add New Diary 👽📓✨</button>
-    </a>
-  <% } %>
-  <% if (profile.diaries.length) { %>
-    <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> diaries! Here they are:
-    </h2>
-    <% profile.diaries.forEach(diary => { %>
-      <h3>
-        <%= diary.subject %> written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
-      </h3>
-      <p><%= diary.entry %></p>
-      <% if (isSelf) { %>
-        <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
-          <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
-        </a>
-        <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
-          <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
-        </form>
-      <% } %>
-    <% }) %>
-  <% } else { %>
-    <h2>
-      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any diaries.
-    </h2>
-  <% } %>
+  </div>
+  <div class="diary-container">
+    <% if (isSelf)  {%> 
+      <a href="/profiles/<%= user.profile._id %>/diaries/newDiary">
+        <button class="btn" type="submit">Add New Diary 👽📓✨</button>
+      </a>
+    <% } %>
+    <% if (profile.diaries.length) { %>
+      <h2>
+        <%= isSelf ? "You have" : `${profile.name} has` %> diaries! Here they are:
+      </h2>
+      <% profile.diaries.forEach(diary => { %>
+        <h3>
+          <%= diary.subject %> written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
+        </h3>
+        <p><%= diary.entry %></p>
+        <% if (isSelf) { %>
+          <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
+            <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
+          </a>
+          <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
+            <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
+          </form>
+        <% } %>
+      <% }) %>
+    <% } else { %>
+      <h2>
+        <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any diaries.
+      </h2>
+    <% } %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
