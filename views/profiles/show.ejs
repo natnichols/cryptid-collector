@@ -13,7 +13,9 @@
   <div>Favorite Cryptids:</div>
     <ul>
       <% profile.favorites.forEach(favorite => { %>
-      <li><%= favorite.name %></li>
+      <li>
+        <a href="/cryptids/<%= favorite._id %>"><%= favorite.name %></a>
+      </li>
       <% }) %>
     </ul>
   <% if (isSelf)  {%> 

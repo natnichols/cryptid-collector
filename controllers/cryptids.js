@@ -41,7 +41,8 @@ function show(req, res) {
   Cryptid.findById(req.params.cryptidId).populate([
     {path: 'owner'},
     {path: 'owner.owner'},
-    {path: 'comments.author'}
+    {path: 'comments.author'},
+    {path: 'comments.spotted'},
   ]).then(cryptid => {
     res.render('cryptids/show', {
       cryptid,
