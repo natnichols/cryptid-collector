@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/cryptids/edit.css">
 <%- include('../partials/nav') %>
 
 <section>
   <h1>Edit this Cryptid! ✏️👻</h1>
-  <form action="/cryptids/<%= cryptid._id %>?_method=PUT" method="POST">
+  <form id="edit-form" action="/cryptids/<%= cryptid._id %>?_method=PUT" method="POST">
     <label>
       Name: 
       <input 

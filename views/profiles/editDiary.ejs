@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/editDiary.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h2>Edit Diary</h2>
-  <form action="/profiles/<%= user.profile._id %>/diaries/<%= diary._id %>?_method=PUT" method="POST">
+  <form id="edit-diary-form" action="/profiles/<%= user.profile._id %>/diaries/<%= diary._id %>?_method=PUT" method="POST">
     <label>
       Subject: 
       <input value="<%= diary.subject %>" type="text" name="subject" autocomplete="off">

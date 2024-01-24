@@ -16,7 +16,6 @@ function index(req, res) {
 function show(req, res) {
   Profile.findById(req.params.profileId)
   .populate(
-    // {path: 'diaries'},
     [{path: 'diaries.author'},
     {path: 'favorites'},]
   )
