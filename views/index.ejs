@@ -2,15 +2,17 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h2>👽 hello, <%= user ? user.profile.name : "cryptid enthusiast" %></h2>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <div class="root-route-view-container">
+    <h2>👽 hello, <%= user ? user.profile.name : "cryptid enthusiast" %></h2>
+    <% if (user?.profile.avatar) { %>
+      <div>
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </div>
+    <% } %>
+  </div>
 </main>
 
 <%- include('./partials/footer') %>
