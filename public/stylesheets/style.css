@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-  background-color: #f6f6f61b;
+  background-color: rgba(0, 0, 0, 0.4);
   color: #1a1a1a;
   display: flex;
   align-items: center;
