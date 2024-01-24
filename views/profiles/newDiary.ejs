@@ -3,27 +3,29 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h2>Add New Diary</h2>
-  <form id="new-diary-form" action="/profiles/<%= user.profile._id %>/diaries" method="POST">
-    <label>
-      Subject: 
-      <input type="text" name="subject" autocomplete="off">
-    </label>
-    <label for="posted-date-input">Date Posted:
-      <input type="datetime-local" value="<%# postedDate %>" name="posted" id="posted-date-input">
-    </label>
-    <label for="entry-input">Entry:
-      <textarea 
-        name="entry" 
-        id="entry-input" 
-        cols="30"
-        rows="5" 
-        type="text"
-        autocomplete="off"
-      ></textarea>
-    </label>
-    <button class="btn" type="submit">Create New Diary 👽📓✨</button>
-  </form>
+  <div class="new-diary-container">
+    <h2>Add New Diary</h2>
+    <form id="new-diary-form" action="/profiles/<%= user.profile._id %>/diaries" method="POST">
+      <label>
+        Subject: 
+        <input type="text" name="subject" autocomplete="off">
+      </label>
+      <label for="posted-date-input">Date Posted:
+        <input type="datetime-local" value="<%# postedDate %>" name="posted" id="posted-date-input">
+      </label>
+      <label for="entry-input">Entry:
+        <textarea 
+          name="entry" 
+          id="entry-input" 
+          cols="30"
+          rows="5" 
+          type="text"
+          autocomplete="off"
+        ></textarea>
+      </label>
+      <button class="btn" type="submit">Create New Diary 👽📓✨</button>
+    </form>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
