@@ -5,16 +5,19 @@
 <section>
   <div class="cryptid-container">
     <h2><%= cryptid.name %> 👻</h2>
-    <h3>Spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of cryptid owner">&nbsp;
-      <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %></h3>
+    <h3>
+      Spotted by <img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of cryptid owner"><a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %>
+    </h3>
     <p><%= cryptid.description %></p>
     <% if (cryptid.owner.equals(user?.profile._id)) { %>
-      <a href="/cryptids/<%= cryptid._id %>/edit">
-        <button class="btn">Edit Cryptid ✏️👻</button>
-      </a>
-      <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Delete Cryptid ❌👽</button>
-      </form>
+      <div class="edit-delete-container">
+        <a href="/cryptids/<%= cryptid._id %>/edit">
+          <button class="btn">Edit Cryptid ✏️👻</button>
+        </a>
+        <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete Cryptid ❌👽</button>
+        </form>
+      </div>
     <% } %>
   </div>
   <div class="comments-container">
@@ -22,16 +25,19 @@
   <ul>
     <% cryptid.comments?.forEach(comment => { %>
       <li>
-        <%= comment.content %> -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">&nbsp;
-          <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
-          <% if (comment.author.equals(user?.profile._id)) { %>
-            <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
-              <button class="btn">✏️</button>
-            </a>
-            <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="submit">❌</button>
-            </form>
-          <% } %>
+        <%= comment.content %>
+      </li>
+      <li>
+        -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">&nbsp;
+        <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
+        <% if (comment.author.equals(user?.profile._id)) { %>
+          <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
+            <button class="btn">✏️</button>
+          </a>
+          <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">❌</button>
+          </form>
+        <% } %>
       </li>
     <% }) %>
   </ul>

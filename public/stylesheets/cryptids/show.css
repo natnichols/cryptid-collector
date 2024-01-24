@@ -22,6 +22,13 @@ section {
   width: 1100px;
 }
 
+.edit-delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .comments-container {
   display: flex;
   justify-content: center;

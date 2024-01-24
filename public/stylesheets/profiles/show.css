@@ -55,6 +55,17 @@ section {
   width: 1100px;
 }
 
+.edit-delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .btn {
   font-size: 20px;
+}
+
+li {
+  font-size: 25px;
 }

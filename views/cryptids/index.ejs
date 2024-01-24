@@ -12,9 +12,11 @@
           <a href="/cryptids/<%= cryptid._id %>"><%= cryptid.name %></a>&nbsp; spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of poster">
           <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a>&nbsp; on <%= cryptid.spotted.toLocaleString() %>
           <!-- needs conditional to check for  if favorites includes this cryptid -->
-          <a href="/cryptids/<%= cryptid._id %>/favorites">
-            <button class="btn" type="submit">⭐️</button>
-          </a>
+          <%# if (cryptid.name.equals(cryptid?.owner.favorites.name)) { %>
+            <a href="/cryptids/<%= cryptid._id %>/favorites">
+              <button class="btn" type="submit">⭐️</button>
+            </a>
+          <%# } %>
         </li>
       <% }) %>
     </ul>

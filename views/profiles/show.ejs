@@ -9,14 +9,14 @@
       src="<%= profile.avatar %>" 
       alt="<%= profile.name %>'s avatar"
     >
-    <h1><%= isSelf ? "Your " : `${profile.name}'s` %> Profile</h1>
+    <h2><%= isSelf ? "Your " : `${profile.name}'s` %> Profile</h2>
   </div>
   <div class="fave-cryptid-container">
-    Favorite Cryptids:
+    <h3>💖 Favorite Cryptids</h3>
     <ul>
       <% profile.favorites.forEach(favorite => { %>
         <li>
-          <a href="/cryptids/<%= favorite._id %>"><%= favorite.name %></a>
+          <a href="/cryptids/<%= favorite._id %>">⭐️ <%= favorite.name %></a>
         </li>
       <% }) %>
     </ul>
@@ -29,20 +29,25 @@
     <% } %>
     <% if (profile.diaries.length) { %>
       <h2>
-        <%= isSelf ? "You have" : `${profile.name} has` %> diaries! Here they are:
+        <%= isSelf ? "Your" : `${profile.name}'s'` %> diaries:
       </h2>
       <% profile.diaries.forEach(diary => { %>
         <h3>
-          <%= diary.subject %> written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
+          <%= diary.subject %>
+        </h3>
+        <h3>
+          written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
         </h3>
         <p><%= diary.entry %></p>
         <% if (isSelf) { %>
-          <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
-            <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
-          </a>
-          <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
-            <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
-          </form>
+          <div class="edit-delete-container">
+            <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
+              <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
+            </a>
+            <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
+              <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
+            </form>
+          </div>
         <% } %>
       <% }) %>
     <% } else { %>

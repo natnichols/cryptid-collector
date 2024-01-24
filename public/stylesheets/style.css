@@ -67,6 +67,10 @@ h2 {
 
 h3 {
   font-size: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: 1px;
 }
 
