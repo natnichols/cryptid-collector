@@ -3,23 +3,25 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <form id="new-form" action="/cryptids" method="POST">
-    <label for="cryptid-name-input">Name:</label>
-    <input type="text" name="name" id="cryptid-name-input" autocomplete="off">
-    <label for="spotted-date-input">Date Spotted:</label>
-    <input type="datetime-local" value="<%= spottedDate %>" name="spotted" id="spotted-date-input">
-    <label for="description-input">Description:</label>
-    <textarea 
-      name="description" 
-      id="description-input" 
-      cols="30"
-      rows="5" 
-      type="text"
-      autocomplete="off"
-    ></textarea>
-    <button class="btn" type="submit">Add Cryptid 🦇✨</button>
-  </form>
+  <div class="new-form-container">
+    <h2><%= title %></h2>
+    <form id="new-form" action="/cryptids" method="POST">
+      <label for="cryptid-name-input">Name:</label>
+      <input type="text" name="name" id="cryptid-name-input" autocomplete="off">
+      <label for="spotted-date-input">Date Spotted:</label>
+      <input type="datetime-local" value="<%= spottedDate %>" name="spotted" id="spotted-date-input">
+      <label for="description-input">Description:</label>
+      <textarea 
+        name="description" 
+        id="description-input" 
+        cols="30"
+        rows="5" 
+        type="text"
+        autocomplete="off"
+      ></textarea>
+      <button class="btn" type="submit">Add Cryptid 🦇✨</button>
+    </form>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
