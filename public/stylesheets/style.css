@@ -26,13 +26,15 @@ body {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.316);
   color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   min-height: 60px;
+  border: 2px solid #B6CEC3;
+  border-radius: 10px;
 }
 
 body > main {
@@ -50,6 +52,8 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 20px;
+  margin: 0;
 }
 
 h2 {
@@ -149,4 +153,8 @@ nav > a {
 li {
   display: flex;
   align-items: center;
+}
+
+#page-header {
+  background-color: rgba(0, 0, 0, 0.5);;
 }
