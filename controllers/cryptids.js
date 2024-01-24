@@ -42,8 +42,9 @@ function show(req, res) {
     {path: 'owner'},
     {path: 'owner.owner'},
     {path: 'comments.author'},
-    {path: 'comments.spotted'},
+    // {path: 'comments.spotted'},
   ]).then(cryptid => {
+    // req.body.comment.spotted = !!req.body.comment.spotted
     res.render('cryptids/show', {
       cryptid,
       title: '👻 Show'

@@ -1,0 +1,24 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.sightings-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.486);
+  border: 2px solid #B6CEC3;
+  border-radius: 10px;
+  color: #B6CEC3;
+  padding: 50px;
+  gap: 20px;
+  margin: 10px;
+  max-width: 1800px;
+}
+
+.btn {
+  font-size: 20px;
+}

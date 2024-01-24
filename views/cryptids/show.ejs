@@ -1,19 +1,23 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/cryptids/show.css">
 <%- include('../partials/nav') %>
 
 <section>
-  <h1><%= cryptid.name %> 👻</h1>
-  <h3>Spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of cryptid owner">
-    <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %></h3>
-  <p><%= cryptid.description %></p>
-  <% if (cryptid.owner.equals(user?.profile._id)) { %>
-    <a href="/cryptids/<%= cryptid._id %>/edit">
-      <button class="btn">Edit Cryptid ✏️👻</button>
-    </a>
-    <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete Cryptid ❌👽</button>
-    </form>
-  <% } %>
+  <div class="cryptid-container">
+    <h2><%= cryptid.name %> 👻</h2>
+    <h3>Spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of cryptid owner">
+      <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %></h3>
+    <p><%= cryptid.description %></p>
+    <% if (cryptid.owner.equals(user?.profile._id)) { %>
+      <a href="/cryptids/<%= cryptid._id %>/edit">
+        <button class="btn">Edit Cryptid ✏️👻</button>
+      </a>
+      <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete Cryptid ❌👽</button>
+      </form>
+    <% } %>
+  </div>
+  <div class="comments-container">
   <h2>Comments</h2>
   <ul>
     <% cryptid.comments?.forEach(comment => { %>
@@ -31,17 +35,20 @@
       </li>
     <% }) %>
   </ul>
-  <% if (user) { %>
-    <h3>Add a comment</h3>
-    <form action="/cryptids/<%= cryptid._id %>/comments" method="POST">
-      <textarea name="content"></textarea>
-      <label>
-        Spotted?
-        <!-- <input type="checkbox" name="spotted" <%# cryptid.comment.spotted ? "checked" : "" %>> -->
-      </label>
-      <button class="btn" type="submit">Add Comment</button>
-    </form>
-  <% } %>
+  </div>
+  <div class="add-comment-container">
+    <% if (user) { %>
+      <h3>Add a comment</h3>
+      <form id="add-comment-form" action="/cryptids/<%= cryptid._id %>/comments" method="POST">
+        <textarea name="content"></textarea>
+        <label>
+          Spotted?
+          <input type="checkbox" name="spotted" <%# cryptid.comment.spotted ? "checked" : "" %>>
+        </label>
+        <button class="btn" type="submit">Add Comment</button>
+      </form>
+    <% } %>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>

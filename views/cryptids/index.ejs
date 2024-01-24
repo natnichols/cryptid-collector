@@ -1,20 +1,23 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/cryptids/index.css">
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>👁️ Latest Sightings 👁️</h1>
-  <ul>
-    <!-- add randomized emoji function from cats profile later -->
-    <% cryptids.forEach(cryptid => { %>
-      <li>👽 
-        <a href="/cryptids/<%= cryptid._id %>"><%= cryptid.name %></a>&nbsp; spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of poster">
-        <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a>&nbsp; on <%= cryptid.spotted.toLocaleString() %>
-        <a href="/cryptids/<%= cryptid._id %>/favorites">
-          <button class="btn" type="submit">⭐️</button>
-        </a>
-      </li>
-    <% }) %>
-  </ul>
+  <div class="sightings-container">
+    <h2>👁️ Latest Sightings 👁️</h2>
+    <ul>
+      <!-- add randomized emoji function from cats profile later -->
+      <% cryptids.forEach(cryptid => { %>
+        <li>👽&nbsp;
+          <a href="/cryptids/<%= cryptid._id %>"><%= cryptid.name %></a>&nbsp; spotted by &nbsp;<img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of poster">
+          <a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a>&nbsp; on <%= cryptid.spotted.toLocaleString() %>
+          <a href="/cryptids/<%= cryptid._id %>/favorites">
+            <button class="btn" type="submit">⭐️</button>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>

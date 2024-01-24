@@ -30,7 +30,7 @@ nav {
   color: #1a1a1a;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
   min-height: 60px;
 }
@@ -45,7 +45,7 @@ body > main {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,15 +53,17 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 3px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 33px;
+  margin: 1px;
 }
 
 ul {
@@ -70,10 +72,16 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1px;
 }
 
-p, label, li, button, input {
-  font-size: 22px;
+p, label, button, input {
+  font-size: 25px;
+}
+
+li {
+  word-spacing: .75px;
+  font-size: 33px;
 }
 
 label {
@@ -93,21 +101,23 @@ pre {
 }
 
 nav > a {
-  margin: 8px 24px;
+  margin: 8px 60px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 33px;
+  letter-spacing: 2px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .btn {
-  margin: 5px;
+  margin: 5px 10px;
   border: 1px solid #B6CEC3;
   border-radius: 8px;
   padding: 5px;
   background-color: black;
   color: #B6CEC3;
+
 }
 
 .btn:hover{
