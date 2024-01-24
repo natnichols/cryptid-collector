@@ -22,3 +22,10 @@ section {
 .btn {
   font-size: 20px;
 }
+
+#edit-comment-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
