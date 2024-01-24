@@ -64,3 +64,7 @@ section {
 .btn {
   font-size: 20px;
 }
+
+.profile-photo, .comment-photo {
+  width: 50px;
+}
