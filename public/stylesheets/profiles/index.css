@@ -26,6 +26,10 @@
   padding: 10px;
 }
 
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.614);
+}
+
 .card > img {
   border-radius: 10px;
   border: 1px solid #B6CEC3;
@@ -42,3 +46,8 @@
   font-size: 24px;
   margin: 0 10px;
 }
+
+.card-title:hover {
+  color: #139f81;
+}
+
