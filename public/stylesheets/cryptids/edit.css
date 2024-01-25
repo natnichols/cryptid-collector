@@ -56,3 +56,24 @@ form > button:hover {
   max-width: 1500px;
   width: 1100px;
 }
+
+#name-input {
+  margin: 13px;
+  width: 350px;
+}
+
+#spotted-date-input {
+  margin: 13px;
+  width: 350px;
+}
+
+#description-input {
+  margin: 13px;
+  width: 500px;
+  height: 125px;
+}
+
+#edit-cryptid-btn {
+  margin: 15px;
+  width: 250px;
+}
