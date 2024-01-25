@@ -221,3 +221,15 @@ li {
   align-items: center;
   justify-content: space-between;
 }
+
+.root-route-view-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+  background-color: rgba(0, 0, 0, 0.486);
+  border: 2px solid #B6CEC3;
+  border-radius: 10px;
+  color: #B6CEC3;
+  padding: 20px;
+}

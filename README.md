@@ -2,15 +2,15 @@
 
 #### 👁️ _Don't mind the red eyes..._
 
-Have you ever seen something unexplainable in the woods? In the sky? In the water? In the dark? Do your friends and family refuse to believe you?
+Have you ever seen something unexplainable in the woods? In the sky? In the water? In the dark? Do your friends and family refuse to believe you? <!-- more personal background, like brief mention of my X files special interest? -->
 
-![Screenshot of Landing page](/public/images/Cryptid-Collector-Landing-Page.png)
+![Screenshot of Landing page](/public/images/Cryptid-Collector-Landing-Page.png) <!-- want to replace with better screenshot after fixing nav bar symmetry -->
 
 This app gives you the opportunity to log cryptids you've seen and share them with other cryptid enthusiasts. When you create an account with Google, you can add crypids to a growing roledex of strange and unusual sightings from all over the world, interact with other users by favoriting or commenting on individual Cryptid listings, and create diaries about your paranormal experiences that you can share on your profile, along with a list of your favorite cryptids.
 
-
-
 ## So, do you know what you saw? [Start Collecting Your Own Cryptids Here](https://cryptid-collector-nn.fly.dev "Cryptid Collector") 👁️
+
+<!-- add additional app screenshot? maybe of listings page once I have more listings? -->
 
 ## Attributions 🎉
 * Fonts are sourced from [Google Fonts](https://fonts.google.com/ "Browse Google Fonts")
