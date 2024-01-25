@@ -65,8 +65,8 @@
   <% } %>
   
   </div>
-  <div class="add-comment-container">
-    <% if (user) { %>
+  <% if (user) { %>
+    <div class="add-comment-container">
       <h3>Add a comment</h3>
       <form id="add-comment-form" action="/cryptids/<%= cryptid._id %>/comments" method="POST">
         <textarea id="comment-input" name="content"></textarea>
@@ -76,8 +76,8 @@
         </label>
         <button id="comment-btn" class="btn" type="submit">Add Comment</button>
       </form>
+    </div>
     <% } %>
-  </div>
 </section>
 
 <%- include('../partials/footer') %>
