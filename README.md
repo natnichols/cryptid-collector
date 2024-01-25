@@ -32,6 +32,10 @@ This app gives you the opportunity to log cryptids you've seen and share them wi
 ### [View my Planning Materials on Trello](https://trello.com/b/Am2CNAVe/cryptid-collector "Cryptid Collector Trello Board") 👽📋
 
 ## Ice Box 🧊
-- [x] Favorites
+- [X] Favorites
 - [ ] Mobile responsiveness
+- [ ] Location of sighting included in listing
+- [ ] Weather from random Cryptid Towns displayed in nav bar using Weather API
+  - [ ] Also used on individual cryptid listings, displaying the weather corresponding to the location in the listing
+- [ ] Direct Messaging Functionality
 
