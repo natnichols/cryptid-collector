@@ -19,3 +19,6 @@ section {
   max-width: 1800px;
 }
 
+#fave-btn {
+  width: 40px;
+}

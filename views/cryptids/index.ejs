@@ -14,7 +14,7 @@
           <!-- needs conditional to check for  if favorites includes this cryptid -->
           <%# if (cryptid.name.equals(cryptid?.owner.favorites.name)) { %>
             <a href="/cryptids/<%= cryptid._id %>/favorites">
-              <button class="btn" type="submit">⭐️</button>
+              <button id="fave-btn" class="btn" type="submit">⭐️</button>
             </a>
           <%# } %>
         </li>
