@@ -36,16 +36,18 @@
           <%= diary.subject %>
         </h3>
         <h3>
-          written by <%= diary.author.name %> on <%= diary.posted.toLocaleString() %>
+          written by 
+          <a href="/profiles/<%= profile._id %>"><%= diary.author.name %></a> 
+          on <%= diary.posted.toLocaleString() %>
         </h3>
         <p><%= diary.entry %></p>
         <% if (isSelf) { %>
           <div class="edit-delete-container">
             <a href="/profiles/<%= profile._id %>/diaries/<%= diary._id %>/edit">
-              <button class="btn">📝👽📓 Edit <%= diary.subject %></button>
+              <button id="edit-diary-btn" class="btn">📝👽📓 Edit <%= diary.subject %></button>
             </a>
             <form action="/profiles/diaries/<%= diary._id %>?_method=DELETE" method="POST" style="display: inline-block">
-              <button class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
+              <button id="delete-diary-btn" class="btn" type="submit">❌👽📓 Delete <%= diary.subject %></button>
             </form>
           </div>
         <% } %>

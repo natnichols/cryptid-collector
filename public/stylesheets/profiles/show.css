@@ -73,3 +73,15 @@ li {
 .profile-avatar {
   margin: 10px;
 }
+
+#edit-diary-btn{
+  margin: 15px;
+  width: 345px;
+  padding: 8px;
+}
+
+#delete-diary-btn{
+  margin: 15px;
+  width: 345px;
+  padding: 8px;
+}
