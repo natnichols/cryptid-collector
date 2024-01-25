@@ -12,10 +12,10 @@
     <% if (cryptid.owner.equals(user?.profile._id)) { %>
       <div class="edit-delete-container">
         <a href="/cryptids/<%= cryptid._id %>/edit">
-          <button class="btn">Edit Cryptid ✏️👻</button>
+          <button id="edit-cryptid-btn" class="btn">Edit Cryptid ✏️👻</button>
         </a>
         <form action="/cryptids/<%= cryptid._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete Cryptid ❌👽</button>
+          <button id="delete-cryptid-btn" class="btn" type="submit">Delete Cryptid ❌👽</button>
         </form>
       </div>
     <% } %>
@@ -32,10 +32,10 @@
         <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
         <% if (comment.author.equals(user?.profile._id)) { %>
           <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
-            <button class="btn">✏️</button>
+            <button id="edit-comment-btn" class="btn">✏️</button>
           </a>
           <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">❌</button>
+            <button id="delete-comment-btn" class="btn" type="submit">❌</button>
           </form>
         <% } %>
       </li>

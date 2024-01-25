@@ -79,11 +79,28 @@ section {
   width: 350px;
 }
 
+#edit-cryptid-btn{
+  margin: 15px;
+  width: 220px;
+}
+
+#delete-cryptid-btn{
+  margin: 15px;
+  width: 220px;
+}
+
 #comment-btn{
   margin: 15px;
-  width: 250px;
+  width: 230px;
 }
 
 .profile-photo, .comment-photo {
   width: 50px;
+}
+
+#edit-comment-btn {
+  width: 43px;
+}
+#delete-comment-btn {
+  width: 43px;
 }
