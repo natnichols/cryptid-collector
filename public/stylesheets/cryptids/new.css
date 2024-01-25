@@ -32,6 +32,7 @@ form > button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 
 .new-form-container {
@@ -44,9 +45,30 @@ form > button:hover {
   border: 2px solid #B6CEC3;
   border-radius: 10px;
   color: #B6CEC3;
-  padding: 25px;
+  padding: 10px;
   gap: 20px;
   margin: 30px;
   max-width: 1500px;
   width: 1100px;
+}
+
+#cryptid-name-input {
+  margin: 13px;
+  width: 350px;
+}
+
+#spotted-date-input {
+  margin: 13px;
+  width: 350px;
+}
+
+#description-input {
+  margin: 13px;
+  width: 500px;
+  height: 125px;
+}
+
+#add-cryptid-btn {
+  margin: 15px;
+  width: 250px;
 }
