@@ -31,27 +31,39 @@
   </div>
   <div class="comments-container">
   <h2>Comments</h2>
-  <ul>
-    <% cryptid.comments?.forEach(comment => { %>
-      <ul id="single-comment-container">
-        <li>
-          "<%= comment.content %>"
-        </li>
-        <li id="comment-info">
-          -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">&nbsp;
-          <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
-          <% if (comment.author.equals(user?.profile._id)) { %>
-            <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
-              <button id="edit-comment-btn" class="btn">✏️</button>
-            </a>
-            <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-              <button id="delete-comment-btn" class="btn" type="submit">❌</button>
-            </form>
-          <% } %>
-        </li>
-      </ul>
-    <% }) %>
-  </ul>
+  <% if (cryptid.comments.length) { %>
+    <!-- <%# let spotted = 1 %> 
+    <tr>
+      <td colspan="2"></td>
+      <td>
+        <strong><%# (cryptid.comments.spotted).toFixed(1) %></strong>
+      </td>
+    </tr> -->
+    <ul>
+      <% cryptid.comments?.forEach(comment => { %>
+        <ul id="single-comment-container">
+          <li>
+            "<%= comment.content %>"
+          </li>
+          <li id="comment-info">
+            -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">&nbsp;
+            <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>
+            <% if (comment.author.equals(user?.profile._id)) { %>
+              <a href="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>/edit">
+                <button id="edit-comment-btn" class="btn">✏️</button>
+              </a>
+              <form action="/cryptids/<%= cryptid._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <button id="delete-comment-btn" class="btn" type="submit">❌</button>
+              </form>
+            <% } %>
+          </li>
+        </ul>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %>
+  
   </div>
   <div class="add-comment-container">
     <% if (user) { %>

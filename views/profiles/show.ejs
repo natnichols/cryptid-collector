@@ -11,15 +11,27 @@
     >
     <h2><%= isSelf ? "Your " : `${profile.name}'s` %> Profile</h2>
   </div>
-  <div class="fave-cryptid-container">
-    <h2>💖 Favorite Cryptids</h2>
-    <ul>
-      <% profile.favorites.forEach(favorite => { %>
-        <li>
-          <a href="/cryptids/<%= favorite._id %>">⭐️ <%= favorite.name %></a>
-        </li>
-      <% }) %>
-    </ul>
+  <div class="cryptid-container">
+    <!-- <div id="my-cryptid-container">
+      <h2>👁️ <%# isSelf ? "Your " : `${profile.name}'s` %> Sightings</h2>
+      <ul>
+        <%# cryptids.forEach(cryptid => { %>
+          <li>
+            <a href="/cryptids/<%# cryptid._id %>">🔭 <%# cryptid.name %></a>
+          </li>
+        <%# }) %>
+      </ul>
+    </div> -->
+    <div id="fave-cryptid-container">
+      <h2>💖 Favorite Cryptids</h2>
+      <ul>
+        <% profile.favorites.forEach(favorite => { %>
+          <li>
+            <a href="/cryptids/<%= favorite._id %>">⭐️ <%= favorite.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
   </div>
   <div class="diary-container">
     <% if (isSelf)  {%> 
@@ -35,11 +47,11 @@
         <h3>
           <%= diary.subject %>
         </h3>
-        <h3>
-          written by 
-          <a href="/profiles/<%= profile._id %>"><%= diary.author.name %></a> 
+        <li>
+          written by&nbsp; 
+          <a href="/profiles/<%= profile._id %>"><%= diary.author.name %></a>&nbsp; 
           on <%= diary.posted.toLocaleString() %>
-        </h3>
+        </li>
         <p><%= diary.entry %></p>
         <% if (isSelf) { %>
           <div class="edit-delete-container">

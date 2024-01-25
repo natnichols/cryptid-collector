@@ -40,6 +40,7 @@ section {
 .comments-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.486);
