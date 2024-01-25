@@ -212,13 +212,8 @@ li {
 }
 
 #g_id_onload {
-  margin: 8px 60px;
-  text-decoration: none;
-  font-size: 33px;
-  letter-spacing: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  visibility: hidden;
+  display: none;
 }
 
 .g_id_signin {
