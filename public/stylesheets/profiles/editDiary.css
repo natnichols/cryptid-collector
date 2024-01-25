@@ -10,10 +10,6 @@ form > button:hover {
   cursor: pointer;
 }
 
-/* #entry-input > textarea {
-  width: 250px;
-} */
-
 #edit-diary-form {
   display: flex;
   flex-direction: column;
