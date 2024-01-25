@@ -45,6 +45,7 @@
           <li>
             "<%= comment.content %>"
           </li>
+          <li id="spotted-comment"><%= comment.spotted ? "Spotted" : "" %></li>
           <li id="comment-info">
             -&nbsp;<img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">&nbsp;
             <a href="/profiles/<%= comment.author._id %>"><%= comment.author.name %></a>&nbsp;at <%= comment.createdAt.toLocaleString() %>

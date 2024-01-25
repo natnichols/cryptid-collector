@@ -96,6 +96,8 @@ p, label, button, input {
 li {
   word-spacing: .75px;
   font-size: 33px;
+  display: flex;
+  align-items: center;
 }
 
 label {
@@ -168,11 +170,6 @@ nav > a {
   width: 30px;
 }
 
-li {
-  display: flex;
-  align-items: center;
-}
-
 #page-header {
   background-color: rgba(0, 0, 0, 0.35);
 }
@@ -236,4 +233,9 @@ li {
   border-radius: 10px;
   color: #B6CEC3;
   padding: 20px;
+}
+
+#spotted-comment {
+  font-size: 25px;
+  font-style: italic;
 }
