@@ -21,4 +21,9 @@ section {
 
 #fave-btn {
   width: 40px;
+  margin-left: 15px;
+}
+
+li {
+  margin: 10px;
 }
