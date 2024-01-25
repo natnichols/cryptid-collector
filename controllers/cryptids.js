@@ -112,6 +112,7 @@ function deleteCryptid(req, res) {
 
 function addComment(req, res) {
   Cryptid.findById(req.params.cryptidId).then(cryptid => {
+    req.body.spotted = !!req.body.spotted
     req.body.author = req.user.profile._id
     cryptid.comments.push(req.body)
     cryptid.save().then(()=> {

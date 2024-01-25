@@ -195,12 +195,20 @@ li {
 .footer {
   position: absolute;
   bottom: 10px;
+  margin-top: 2500px;
 }
 
 .footer-github {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.footer-github > a {
+  color: #d39c06;
+  font-style: oblique;
+  font-size: 18px;
+  /* align-self: center; */
 }
 
 #g_id_onload {
