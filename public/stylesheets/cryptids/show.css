@@ -22,6 +22,14 @@ section {
   width: 1100px;
 }
 
+#cryptid-name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
 .edit-delete-container {
   display: flex;
   justify-content: center;
@@ -124,4 +132,9 @@ ul {
 
 #comment-info {
   font-size: 28px;
+}
+
+#fave-btn {
+  width: 40px;
+  margin-left: 15px;
 }

@@ -4,7 +4,16 @@
 
 <section>
   <div class="cryptid-container">
-    <h2><%= cryptid.name %> 👻</h2>
+    <div id="cryptid-name-container">
+      <h2><%= cryptid.name %> 👻
+        <!-- needs conditional to check for  if favorites includes this cryptid -->
+        <%# if (cryptid.name.equals(cryptid?.owner.favorites.name)) { %>
+          <a href="/cryptids/<%= cryptid._id %>/favorites">
+            <button id="fave-btn" class="btn" type="submit">⭐️</button>
+          </a>
+        <%# } %>
+      </h2>
+    </div>
     <h3>
       Spotted by <img class="profile-photo" src="<%= cryptid.owner.avatar %>" alt="avatar of cryptid owner"><a href="/profiles/<%= cryptid.owner._id %>"><%= cryptid.owner.name %></a> on <%= cryptid.spotted.toLocaleString() %>
     </h3>
