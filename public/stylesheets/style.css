@@ -126,13 +126,17 @@ nav > a {
   padding: 5px;
   background-color: black;
   color: #B6CEC3;
-
 }
 
 .btn:hover{
   cursor: pointer;
   background-color: #B6CEC3;
   color: black;
+}
+
+#nav-btn {
+  padding: 10px 15px;
+  width: 210px;
 }
 
 .link {

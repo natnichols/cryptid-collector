@@ -24,7 +24,7 @@
   <div class="diary-container">
     <% if (isSelf)  {%> 
       <a href="/profiles/<%= user.profile._id %>/diaries/newDiary">
-        <button class="btn" type="submit">Add New Diary 👽📓✨</button>
+        <button id="new-diary-button" class="btn" type="submit">Add New Diary 👽📓✨</button>
       </a>
     <% } %>
     <% if (profile.diaries.length) { %>

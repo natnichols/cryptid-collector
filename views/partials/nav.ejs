@@ -4,11 +4,19 @@
 </head>
 <body>
 <nav>
-  <a href="/cryptids">🦇 Latest Sightings</a>
-  <a href="/cryptids/new">👻 Add a Cryptid</a>
-  <a href="/profiles">👽 Profiles</a>
+  <a href="/cryptids">
+    <button id="nav-btn" class="btn">🦇 Latest Sightings</button>
+  </a>
+  <a href="/cryptids/new">
+    <button id="nav-btn" class="btn">👻 Add a Cryptid</button>
+  </a>
+  <a href="/profiles">
+    <button id="nav-btn" class="btn">👽 Profiles</button>
+  </a>
   <% if (user) { %>
-    <a href="/auth/logout">✌️ Log Out</a>
+    <a href="/auth/logout">
+      <button id="nav-btn" class="btn">✌️ Log Out</button>
+    </a>
   <% } else { %>
     <div 
       id="g_id_onload"

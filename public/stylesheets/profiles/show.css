@@ -69,3 +69,11 @@ section {
 li {
   font-size: 25px;
 }
+
+#new-diary-button {
+  font-size: 25px;
+}
+
+.profile-avatar {
+  margin: 10px;
+}
