@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.316);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -54,6 +54,7 @@ h1 {
   flex-direction: column;
   padding: 20px;
   margin: 0;
+  color: #d39c06;
 }
 
 h2 {
@@ -63,6 +64,7 @@ h2 {
   justify-content: center;
   flex-direction: column;
   margin: 3px;
+  color: #d39c06;
 }
 
 h3 {
@@ -105,6 +107,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #d8ba69;
+  cursor: pointer;
+}
+
 pre {
   font-size: 14px;
 }
@@ -121,7 +128,7 @@ nav > a {
 
 .btn {
   margin: 5px 10px;
-  border: 1px solid #B6CEC3;
+  border: 1px solid #d6b559;
   border-radius: 8px;
   padding: 5px;
   background-color: black;
@@ -130,7 +137,7 @@ nav > a {
 
 .btn:hover{
   cursor: pointer;
-  background-color: #B6CEC3;
+  background-color: #d6b559;
   color: black;
 }
 
@@ -164,7 +171,7 @@ li {
 }
 
 #page-header {
-  background-color: rgba(0, 0, 0, 0.5);;
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .root-route-view-container {
