@@ -11,6 +11,7 @@ _App Description_
 ## Attributions 🎉
 * Fonts are sourced from [Google Fonts](https://fonts.google.com/ "Browse Google Fonts")
 * Background image is sourced from [Tim Mossholder](https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash "Tim Mossholder Unsplash profile") on [Unsplash](https://unsplash.com/photos/a-forest-filled-with-lots-of-trees-covered-in-fog-owRLMogs3sg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash "Trees in the Fog on Unsplash")
+* Favicon image is sourced from [Tim Bertelink on Wikipedia](https://simple.wikipedia.org/wiki/Mothman#/media/File:Mothman_Artist's_Impression.png "Artist's impression of the mothman on Wikipedia")
 * MEN Stack with OAuth Template is from [GA's SEI Github (Private Repository)](https://github.com/SEI-Remote/men-stack-oauth-template "SEI-Remote MEN Stack with OAuth Template GitHub Repo")
 
 ## Technologies used 🧰
