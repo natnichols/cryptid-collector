@@ -135,6 +135,7 @@ nav > a {
   background-color: black;
   color: #B6CEC3;
   font-size: 20px;
+  width: 300px;
 }
 
 .btn:hover{
@@ -145,7 +146,7 @@ nav > a {
 
 #nav-btn {
   padding: 10px 15px;
-  width: 210px;
+  max-width: max-content;
 }
 
 .link {
