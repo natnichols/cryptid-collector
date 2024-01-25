@@ -1,12 +1,16 @@
 # 🦇 Cryptid Collector 👻
 
-#### _Quick tagline about app_
+#### 👁️ _Don't mind the red eyes..._
 
-_App Description_
+Have you ever seen something unexplainable in the woods? In the sky? In the water? In the dark? Do your friends and family refuse to believe you?
 
 ![Screenshot of Landing page](/public/images/Cryptid-Collector-Landing-Page.png)
 
-## So, do you know what you saw? [Start Collecting Your Own Cryptids Here](https://cryptid-collector-nn.fly.dev "Cryptid Collector") 👽
+This app gives you the opportunity to log cryptids you've seen and share them with other cryptid enthusiasts. When you create an account with Google, you can add crypids to a growing roledex of strange and unusual sightings from all over the world, interact with other users by favoriting or commenting on individual Cryptid listings, and create diaries about your paranormal experiences that you can share on your profile, along with a list of your favorite cryptids.
+
+
+
+## So, do you know what you saw? [Start Collecting Your Own Cryptids Here](https://cryptid-collector-nn.fly.dev "Cryptid Collector") 👁️
 
 ## Attributions 🎉
 * Fonts are sourced from [Google Fonts](https://fonts.google.com/ "Browse Google Fonts")
@@ -25,7 +29,7 @@ _App Description_
 ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
-### [View my Planning Materials on Trello](https://trello.com/b/Am2CNAVe/cryptid-collector "Cryptid Collector Trello Board") 🗒
+### [View my Planning Materials on Trello](https://trello.com/b/Am2CNAVe/cryptid-collector "Cryptid Collector Trello Board") 👽📋
 
 ## Ice Box 🧊
 - [x] Favorites
