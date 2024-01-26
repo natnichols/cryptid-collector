@@ -62,7 +62,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4.5vh;
+  font-size: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.8vh;
+  font-size: 2.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,12 +90,12 @@ ul {
 }
 
 p, label, button, input {
-  font-size: 2.25vh;
+  font-size: 2vh;
 }
 
 li {
   word-spacing: .075vh;
-  font-size: 2.5vh;
+  font-size: 2.3vh;
   display: flex;
   align-items: center;
 }
