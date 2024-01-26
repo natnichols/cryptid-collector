@@ -33,6 +33,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   color: #1a1a1a;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 1vh;
