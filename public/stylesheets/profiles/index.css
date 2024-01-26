@@ -7,9 +7,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px;
-  max-width: 1600px;
+  gap: 2vh;
+  margin: 2vh;
+  max-width: 160vh;
 }
 
 .text-decoration-none {
@@ -18,12 +18,12 @@
 
 .card {
   display: flex;
-  width: 300px;
+  width: 30vh;
   background-color: rgba(0, 0, 0, 0.486);
-  border: 2px solid #B6CEC3;
-  border-radius: 10px;
+  border: .2vh solid #B6CEC3;
+  border-radius: 1vh;
   color: #B6CEC3;
-  padding: 10px;
+  padding: 1vh;
 }
 
 .card:hover {
@@ -31,9 +31,9 @@
 }
 
 .card > img {
-  border-radius: 10px;
-  border: 1px solid #B6CEC3;
-  height: 96px;
+  border-radius: 1vh;
+  border: .1vh solid #B6CEC3;
+  height: 9.6vh;
 }
 
 .card-body {
@@ -43,8 +43,8 @@
 }
 
 .card-title {
-  font-size: 24px;
-  margin: 0 10px;
+  font-size: 2.4vh;
+  margin: 0 1vh;
 }
 
 .card-title:hover {

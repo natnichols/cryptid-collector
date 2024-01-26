@@ -1,25 +1,8 @@
-/* form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 352px));
-  font-size: 20px;
-}
-
-form * {
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 20px;
-} */
-
-/* #description-input > textarea {
-  width: 250px;
-} */
-
 form > button {
   grid-column: span 2;
-  width: 160px;
+  width: 16vh;
   margin-left: auto;
-  font-size: 22px;
+  font-size: 2.2vh;
 }
 
 form > button:hover {
@@ -32,7 +15,7 @@ form > button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  margin: 1vh;
 }
 
 .new-form-container {
@@ -42,33 +25,33 @@ form > button:hover {
   flex-wrap: wrap;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.486);
-  border: 2px solid #B6CEC3;
-  border-radius: 10px;
+  border: .2vh solid #B6CEC3;
+  border-radius: 1vh;
   color: #B6CEC3;
-  padding: 10px;
-  gap: 20px;
-  margin: 30px;
-  max-width: 1500px;
-  width: 1100px;
+  padding: 1vh;
+  gap: 2vh;
+  margin: 3vh;
+  max-width: 150vh;
+  width: 110vh;
 }
 
 #cryptid-name-input {
-  margin: 13px;
-  width: 350px;
+  margin: 1.3vh;
+  width: 35vh;
 }
 
 #spotted-date-input {
-  margin: 13px;
-  width: 350px;
+  margin: 1.3vh;
+  width: 35vh;
 }
 
 #description-input {
-  margin: 13px;
-  width: 500px;
-  height: 125px;
+  margin: 1.3vh;
+  width: 50vh;
+  height: 12.5vh;
 }
 
 #add-cryptid-btn {
-  margin: 15px;
-  width: 230px;
+  margin: 1.5vh;
+  width: 23vh;
 }
