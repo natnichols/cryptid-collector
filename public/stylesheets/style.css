@@ -87,6 +87,7 @@ ul {
   flex-direction: column;
   align-items: center;
   margin: .1vh;
+  padding: 0;
 }
 
 p, label, button, input {
