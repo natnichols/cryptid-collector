@@ -69,9 +69,23 @@ function deleteDiary(req, res) {
 }
 
 function newDiary(req, res) {
-  req.body.author = req.user.profile._id
-  res.render('profiles/newDiary', {
-    title: 'New Diary',
+  Profile.findById(req.user.profile._id).then(profile => {
+    console.log(profile);
+    req.body.author = req.user.profile._id
+    profile.diaries.push(req.body)
+    profile.save().then(()=> {
+      res.render('profiles/newDiary', {
+        title: 'New Diary',
+      })
+    })
+    .catch(err => {
+      console.log(`🚨💥🖍️`, err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(`🚨💥🖍️`, err)
+    res.redirect('/profiles')
   })
 }
 
