@@ -41,9 +41,7 @@ function show(req, res) {
     {path: 'owner'},
     {path: 'owner.owner'},
     {path: 'comments.author'},
-    // {path: 'comments.spotted'},
   ]).then(cryptid => {
-    // req.body.comment.spotted = !!req.body.comment.spotted
     res.render('cryptids/show', {
       cryptid,
       title: '👻 Show'
@@ -194,7 +192,6 @@ function deleteComment(req, res) {
 
 function addFavorite(req, res) {
   Cryptid.findById(req.params.cryptidId).then(cryptid => {
-    // req.body.author = req.user.profile._id
     Profile.findById(req.user.profile._id).then(profile => {
       profile.favorites.push(req.params.cryptidId)
       profile.save().then(()=> {

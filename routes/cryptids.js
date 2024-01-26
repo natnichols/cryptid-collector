@@ -28,8 +28,6 @@ router.delete('/:cryptidId/comments/:commentId', isLoggedIn, cryptidsCtrl.delete
 router.put('/:cryptidId', isLoggedIn, cryptidsCtrl.update)
 // PUT localhost:3000/cryptids/:cryptidId/comments/:commentId (update comment)
 router.put('/:cryptidId/comments/:commentId', isLoggedIn, cryptidsCtrl.updateComment)
-/* 
-// PATCH localhost:3000/cryptids/:cryptidId/flip-spotted*/
 
 
 export {

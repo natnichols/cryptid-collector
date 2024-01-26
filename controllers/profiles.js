@@ -70,12 +70,8 @@ function deleteDiary(req, res) {
 
 function newDiary(req, res) {
   req.body.author = req.user.profile._id
-  // const newDiary = new Diary()
-  // const dt = newDiary.spotted
-  // const postedDate = dt.toISOString().slice(0, 16)
   res.render('profiles/newDiary', {
     title: 'New Diary',
-    // postedDate
   })
 }
 

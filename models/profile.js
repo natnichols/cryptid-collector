@@ -1,15 +1,6 @@
 import mongoose from 'mongoose'
-import { Cryptid } from './cryptid.js'
 
 const Schema = mongoose.Schema
-
-// const commentSchema = new Schema({
-//   content: String,
-//   spotted: Boolean,
-//   author: {type: Schema.Types.ObjectId, ref: 'Profile'}
-// }, {
-//   timestamps: true
-// })
 
 const diarySchema = new Schema({
   subject: String,
@@ -19,7 +10,6 @@ const diarySchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  // comments: [commentSchema]
 }, {
   timestamps: true
 })

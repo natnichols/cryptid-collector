@@ -32,6 +32,7 @@
   <div class="comments-container">
   <h2>Comments</h2>
   <% if (cryptid.comments.length) { %>
+    <!--! Want to include tally how many commenters have seen the cryptid -->
     <!-- <%# let spotted = 1 %> 
     <tr>
       <td colspan="2"></td>
@@ -73,7 +74,7 @@
         <textarea id="comment-input" name="content"></textarea>
         <label>
           Spotted?
-          <input id="spotted-chckbx" type="checkbox" name="spotted" <%# cryptid.comment.spotted ? "checked" : "" %>>
+          <input id="spotted-chckbx" type="checkbox" name="spotted">
         </label>
         <button id="comment-btn" class="btn" type="submit">Add Comment</button>
       </form>
