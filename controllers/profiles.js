@@ -34,6 +34,9 @@ function show(req, res) {
 }
 
 function createDiary(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
   Profile.findById(req.user.profile._id).then(profile => {
     req.body.author = req.user.profile._id
     profile.diaries.push(req.body)
@@ -70,12 +73,14 @@ function deleteDiary(req, res) {
 
 function newDiary(req, res) {
   Profile.findById(req.user.profile._id).then(profile => {
-    console.log(profile);
+    console.log(profile)
+    const newDiaryDate = new Date().toISOString().slice(0, 16)
     req.body.author = req.user.profile._id
     profile.diaries.push(req.body)
     profile.save().then(()=> {
       res.render('profiles/newDiary', {
         title: 'New Diary',
+        newDiaryDate
       })
     })
     .catch(err => {
@@ -111,6 +116,9 @@ function editDiary(req, res) {
 }
 
 function updateDiary(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
   //find profile using :profileId
   Profile.findById(req.params.profileId).then(profile => {
     //find diary using :diaryId defined on route
