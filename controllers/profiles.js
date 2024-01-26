@@ -20,7 +20,6 @@ function show(req, res) {
     {path: 'favorites'},]
   )
   .then(profile => {
-    console.log(profile)
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
       title: `👽 ${profile.name}'s profile`,
