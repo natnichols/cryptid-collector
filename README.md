@@ -28,6 +28,7 @@ This app gives you the opportunity to log cryptids you've seen and share them wi
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
+![Google OAuth](https://img.shields.io/badge/Google_OAuth-4285F4.svg?style=for-the-badge&logo=Google&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 ### [View my Planning Materials on Trello](https://trello.com/b/Am2CNAVe/cryptid-collector "Cryptid Collector Trello Board") 👽📋
